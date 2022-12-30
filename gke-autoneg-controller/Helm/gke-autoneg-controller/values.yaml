@@ -1,0 +1,25 @@
+gcpServiceAccount: 
+controllerManager:
+  kubeRbacProxy:
+    image:
+      repository: gcr.io/kubebuilder/kube-rbac-proxy
+      tag: v0.8.0
+  manager:
+    image:
+      repository: ghcr.io/googlecloudplatform/gke-autoneg-controller/gke-autoneg-controller
+      tag: v0.9.7
+    resources:
+      limits:
+        cpu: 100m
+        memory: 30Mi
+      requests:
+        cpu: 100m
+        memory: 20Mi
+  replicas: 1
+kubernetesClusterDomain: cluster.local
+metricsService:
+  ports:
+  - name: https
+    port: 8443
+    targetPort: https
+  type: ClusterIP
