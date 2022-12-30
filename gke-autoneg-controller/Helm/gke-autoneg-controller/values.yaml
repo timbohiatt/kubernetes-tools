@@ -1,4 +1,3 @@
-#gcpServiceAccount: 
 controllerManager:
   kubeRbacProxy:
     image:
