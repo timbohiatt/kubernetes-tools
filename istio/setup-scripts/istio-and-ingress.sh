@@ -13,6 +13,10 @@ helm repo update
 kubectl create namespace istio-system
 helm upgrade istio-base istio/base -n istio-system --install
 helm upgrade istiod istio/istiod -n istio-system --install --wait
+helm upgrade istiod istio/istiod -n istio-system --install --wait
+
+#Sleep
+sleep 60s
 
 # Setup Istio Gateway
 echo "[INSTALL] - Install Istio Gateway"
