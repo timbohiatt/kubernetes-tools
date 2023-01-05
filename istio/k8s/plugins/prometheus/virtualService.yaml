@@ -1,31 +1,13 @@
 ---
 apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
-metadata:
-  name: prometheus-gateway
-  namespace: istio-system
-spec:
-  selector:
-    istio: ingressgateway
-  servers:
-  - port:
-      number: 443
-      name: https-prom
-      protocol: HTTPS
-    tls:
-      mode: SIMPLE
-      credentialName: telemetry-gw-cert
-    hosts:
-    - "prometheus.${INGRESS_DOMAIN}"
----
-apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: prometheus-vs
   namespace: istio-system
 spec:
   hosts:
-  - "prometheus.${INGRESS_DOMAIN}"
+  - "prometheus.tjhiatt.dev"
+  - "prometheus.timhiatt.dev"
   gateways:
   - prometheus-gateway
   http:
