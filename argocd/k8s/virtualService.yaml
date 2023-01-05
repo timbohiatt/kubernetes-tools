@@ -1,29 +1,3 @@
-apiVersion: networking.istio.io/v1beta1
-kind: Gateway
-metadata:
-  name: argocd-gateway
-  namespace: argocd
-spec:
-  selector:
-    istio: ingressgateway # use istio default controller
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    tls:
-      httpsRedirect: true
-    hosts:
-    - "argocd.*" # Change it to "*" if you dont have a host name yet
-  - port:
-      number: 443
-      name: https
-      protocol: HTTPS
-    tls:
-      mode: SIMPLE
-      credentialName: argocd-credential
-    hosts:
-    - "argocd.*" # Change it to "*" if you dont have a host name yet
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -34,7 +8,7 @@ spec:
   hosts:
   - "argocd.*" # Change it to "*" if you dont have a host name yet
   gateways:
-  - argocd-gateway
+  - istio-system/ingress-gateway
   http:
   - route:
     - destination:
