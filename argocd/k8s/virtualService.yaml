@@ -6,12 +6,17 @@ metadata:
   namespace: argocd
 spec:
   hosts:
-  - "argocd.*" # Change it to "*" if you dont have a host name yet
+  - "argocd.tjhiatt.dev" # Change it to "*" if you dont have a host name yet
+  - "argocd.timhiatt.dev" # Change it to "*" if you dont have a host name yet
   gateways:
   - istio-system/ingress-gateway
   http:
   - route:
     - destination:
-        host: "argocd.*" # Change it to "*" if you dont have a host name yet
+        host: "argocd.tjhiatt.dev" # Change it to "*" if you dont have a host name yet
+        port:
+          number: 80
+    - destination:
+        host: "argocd.timhiatt.dev" # Change it to "*" if you dont have a host name yet
         port:
           number: 80

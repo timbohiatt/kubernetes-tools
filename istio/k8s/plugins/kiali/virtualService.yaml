@@ -6,8 +6,8 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "kaili.*"
-  - "kaili.*"
+  - "kaili.timhiatt.dev"
+  - "kaili.tjhiatt.dev"
   gateways:
   - istio-system/ingress-gateway
   http:
