@@ -57,7 +57,7 @@ spec:
 #      protocol: HTTPS
     hosts:
     - tjhiatt.dev
-    - kaili.tjhiatt.dev
+    - kiali.tjhiatt.dev
     - argocd.tjhiatt.dev
 ---
 apiVersion: cloud.google.com/v1
