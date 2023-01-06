@@ -7,7 +7,6 @@ metadata:
 spec:
   hosts:
   - "prometheus.tjhiatt.dev"
-  - "prometheus.timhiatt.dev"
   gateways:
   - prometheus-gateway
   http:
