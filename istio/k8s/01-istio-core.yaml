@@ -10348,47 +10348,47 @@ spec:
         type: Utilization
         averageUtilization: 80
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: istio-ingressgateway
-#   namespace: istio-system
-#   annotations:
-#     cloud.google.com/neg: '{"exposed_ports": {"80":{}}}'
-#     controller.autoneg.dev/neg: '{"backend_services":{"80":[{"name":"tk-v3-lcl-gbl-ext-lb-backend-default","max_rate_per_endpoint":1000}]}}'
-#     #cloud.google.com/neg: '{"exposed_ports": {"80":{},"443":{}}}'
-#     #controller.autoneg.dev/neg: '{"backend_services":{"80":[{"name":"http-be","max_rate_per_endpoint":100}],"443":[{"name":"https-be","max_connections_per_endpoint":1000}]}}'
-#     #cloud.google.com/neg: '{"exposed_ports": {"80":{"name": "tk-gke-istio-ingress-australia-southeast1"}}}'
-#     networking.gke.io/load-balancer-type: "Internal"
-#   labels:
-#     app: istio-ingressgateway
-#     istio: ingressgateway
-#     release: istio
-#     istio.io/rev: default
-#     install.operator.istio.io/owning-resource: unknown
-#     operator.istio.io/component: "IngressGateways"
-# spec:
-#   type: LoadBalancer
-#   #type: ClusterIP
-#   selector:
-#     app: istio-ingressgateway
-#     istio: ingressgateway
-#   ports:
-#     -
-#       name: status-port
-#       port: 15021
-#       protocol: TCP
-#       targetPort: 15021
-#     -
-#       name: http2
-#       port: 80
-#       protocol: TCP
-#       targetPort: 8080
-#     -
-#       name: https
-#       port: 443
-#       protocol: TCP
-#       targetPort: 8443
+apiVersion: v1
+kind: Service
+metadata:
+  name: istio-ingressgateway
+  namespace: istio-system
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports": {"80":{}}}'
+    controller.autoneg.dev/neg: '{"backend_services":{"80":[{"name":"tk-v3-lcl-gbl-ext-lb-backend-default","max_rate_per_endpoint":1000}]}}'
+    #cloud.google.com/neg: '{"exposed_ports": {"80":{},"443":{}}}'
+    #controller.autoneg.dev/neg: '{"backend_services":{"80":[{"name":"http-be","max_rate_per_endpoint":100}],"443":[{"name":"https-be","max_connections_per_endpoint":1000}]}}'
+    #cloud.google.com/neg: '{"exposed_ports": {"80":{"name": "tk-gke-istio-ingress-australia-southeast1"}}}'
+    networking.gke.io/load-balancer-type: "Internal"
+  labels:
+    app: istio-ingressgateway
+    istio: ingressgateway
+    release: istio
+    istio.io/rev: default
+    install.operator.istio.io/owning-resource: unknown
+    operator.istio.io/component: "IngressGateways"
+spec:
+  type: LoadBalancer
+  #type: ClusterIP
+  selector:
+    app: istio-ingressgateway
+    istio: ingressgateway
+  ports:
+    -
+      name: status-port
+      port: 15021
+      protocol: TCP
+      targetPort: 15021
+    -
+      name: http2
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    -
+      name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
 ---
 apiVersion: v1
 kind: Service

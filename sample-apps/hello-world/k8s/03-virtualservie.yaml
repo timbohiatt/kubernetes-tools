@@ -1,0 +1,22 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: hello-world
+  namespace: sample-apps
+spec: 
+  gateways:
+  - istio-system/ingress-gateway
+  hosts: 
+  - "tjhiatt.dev"
+  - "timhiatt.dev"
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route: 
+    - destination: 
+        host: hello-world.sample-apps.svc.cluster.local
+        
+        port: 
+          number: 8080
