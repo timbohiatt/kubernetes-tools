@@ -17,6 +17,5 @@ spec:
     route: 
     - destination: 
         host: hello-world.sample-apps.svc.cluster.local
-        
         port: 
           number: 8080
