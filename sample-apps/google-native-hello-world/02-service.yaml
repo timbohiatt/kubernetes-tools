@@ -4,10 +4,8 @@ kind: Service
 metadata:
   name: hello-world
   namespace: sample-apps
-  labels:
-    project: sample-apps
-    app: hello-world
-    cost-center: cc-001
+  annotations:
+    networking.gke.io/load-balancer-type: "Internal"
 spec:
   type: LoadBalancer 
   selector: 
