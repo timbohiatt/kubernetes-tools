@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+  namespace: sample-apps
+  labels:
+    project: sample-apps
+    app: hello-world
+    cost-center: cc-001
+spec:
+  type: LoadBalancer 
+  selector: 
+    app: hello-world
+  ports:
+    -
+      name: http2
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    -
+      name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
