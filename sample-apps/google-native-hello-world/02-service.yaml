@@ -4,8 +4,9 @@ kind: Service
 metadata:
   name: hello-world
   namespace: sample-apps
-  #annotations:
+  annotations:
   #  networking.gke.io/load-balancer-type: "Internal"
+    cloud.google.com/neg: '{"ingress": true}'
 spec:
   type: LoadBalancer 
   selector: 
