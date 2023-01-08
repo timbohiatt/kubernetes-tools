@@ -4,8 +4,8 @@ kind: Service
 metadata:
   name: hello-world
   namespace: sample-apps
-  annotations:
-    networking.gke.io/load-balancer-type: "Internal"
+  #annotations:
+  #  networking.gke.io/load-balancer-type: "Internal"
 spec:
   type: LoadBalancer 
   selector: 
