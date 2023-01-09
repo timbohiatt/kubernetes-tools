@@ -1,4 +1,52 @@
 ---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: argocd-server-ui-tjhiatt
+  namespace: argocd
+spec:
+  host: argocd.tjhiatt.dev
+  prefix: /
+  service: argocd-server:443
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: argocd-server-cli-tjhiatt
+  namespace: argocd
+spec:
+  # NOTE: the port must be ignored if you have strip_matching_host_port enabled on envoy
+  host: argocd.tjhiatt.dev:443
+  prefix: /
+  service: argocd-server:80
+  regex_headers:
+    Content-Type: "^application/grpc.*$"
+  grpc: true
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: argocd-server-ui-timhiatt
+  namespace: argocd
+spec:
+  host: argocd.timhiatt.dev
+  prefix: /
+  service: argocd-server:443
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: argocd-server-cli-timhiatt
+  namespace: argocd
+spec:
+  # NOTE: the port must be ignored if you have strip_matching_host_port enabled on envoy
+  host: argocd.timhiatt.dev:443
+  prefix: /
+  service: argocd-server:80
+  regex_headers:
+    Content-Type: "^application/grpc.*$"
+  grpc: true
+---
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
