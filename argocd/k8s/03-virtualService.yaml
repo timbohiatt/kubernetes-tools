@@ -13,10 +13,10 @@ spec:
   http:
   - route:
     - destination:
-        host: "argocd.tjhiatt.dev" # Change it to "*" if you dont have a host name yet
+        host: argocd-server # Change it to "*" if you dont have a host name yet
         port:
           number: 80
     - destination:
-        host: "argocd.timhiatt.dev" # Change it to "*" if you dont have a host name yet
+        host: argocd-server # Change it to "*" if you dont have a host name yet
         port:
           number: 80
