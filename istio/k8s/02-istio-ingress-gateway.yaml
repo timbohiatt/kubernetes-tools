@@ -8,7 +8,10 @@ spec:
   selector:
     istio: ingressgateway
   servers: 
-  - port: 
+  - hosts:
+    - tjhiatt.dev
+    - timhiatt.dev 
+    port: 
       number: 80
       name: http
       protocol: HTTP
@@ -16,9 +19,7 @@ spec:
   #    number: 443
   #    name: https
   #    protocol: HTTPS
-    hosts:
-    - tjhiatt.dev
-    - timhiatt.dev
+    
 ---
 apiVersion: cloud.google.com/v1
 kind: BackendConfig

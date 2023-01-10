@@ -13,10 +13,7 @@ spec:
   http:
   - route:
     - destination:
-        host: argocd-server # Change it to "*" if you dont have a host name yet
+        host: argocd-server.argocd.svc.cluster.local
         port:
           number: 80
-    - destination:
-        host: argocd-server # Change it to "*" if you dont have a host name yet
-        port:
-          number: 80
+          #number: 2764
