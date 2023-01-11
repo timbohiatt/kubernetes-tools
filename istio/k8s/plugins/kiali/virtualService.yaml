@@ -6,13 +6,20 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "kiali.tjhiatt.dev"
-  - "kiali.timhiatt.dev"
+  #- "kiali.tjhiatt.dev"
+  #- "kiali.timhiatt.dev"
+  - tjhiatt.dev
+  - timhiatt.dev
   gateways:
   - istio-system/ingress-gateway
   http:
-  - route:
-    - destination:
-        host: kiali.istio-system.svc.cluster.local
-        port:
-          number: 20001
+  - match:
+    - uri:
+        prefix: "/tim"
+    rewrite:
+      uri: "/"
+    - route:
+      - destination:
+          host: kiali.istio-system.svc.cluster.local
+          port:
+            number: 20001
