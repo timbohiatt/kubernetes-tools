@@ -10,7 +10,9 @@ spec:
   servers: 
   - hosts:
     - tjhiatt.dev
-    - timhiatt.dev 
+    - timhiatt.dev
+    - *.tjhiatt.dev
+    - *.timhiatt.dev
     port: 
       number: 80
       name: http
