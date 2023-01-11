@@ -13,12 +13,12 @@ spec:
   gateways:
   - istio-system/ingress-gateway
   http:
-  - match:
+  #- match:
     #- uri:
     #    prefix: "/kiali"
     #rewrite:
     #  uri: "/"
-    route:
+  - route:
     - destination:
         host: kiali.istio-system.svc.cluster.local
         port:
