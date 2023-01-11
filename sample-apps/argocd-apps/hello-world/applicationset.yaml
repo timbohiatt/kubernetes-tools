@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: hello-world
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: primary
+        url: https://172.16.0.18
+  template:
+    metadata:
+      name: '{{cluster}}-hello-world'
+    spec:
+      project:  hello-world
+      source:
+        repoURL: https://github.com/timbohiatt/kubernetes-tools.git
+        targetRevision: HEAD
+        path: sample-apps/argocd-apps/hello-world/manifests
+      destination:
+        server: '{{url}}'
+        namespace: hello-world
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
