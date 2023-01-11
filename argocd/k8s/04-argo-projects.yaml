@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cluster-ops
+  namespace: argocd
+spec:
+  description: Cluster Operations 
+  sourceRepos:
+  - 'https://github.com/timbohiatt/kubernetes-tools'
+    path: argocd/argocd-config/
+  destinations:
+  - namespace: '*'
+    server: https://172.16.1.2
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
