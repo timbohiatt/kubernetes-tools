@@ -6,10 +6,10 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  #- "kiali.tjhiatt.dev"
-  #- "kiali.timhiatt.dev"
-  - tjhiatt.dev
-  - timhiatt.dev
+  - "kiali.tjhiatt.dev"
+  - "kiali.timhiatt.dev"
+  #- tjhiatt.dev
+  #- timhiatt.dev
   gateways:
   - istio-system/ingress-gateway
   http:
