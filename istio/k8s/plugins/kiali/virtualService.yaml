@@ -7,12 +7,13 @@ metadata:
 spec:
   hosts:
   - "kaili.tjhiatt.dev"
+  - "kaili.timhiatt.dev"
   gateways:
   - istio-system/ingress-gateway
   http:
   - route:
     - destination:
-        host: kiali
+        host: kiali.istio-system.svc.cluster.local
         port:
           number: 20001
 ---
