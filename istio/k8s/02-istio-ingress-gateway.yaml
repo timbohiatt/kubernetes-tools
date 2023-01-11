@@ -9,10 +9,10 @@ spec:
     istio: ingressgateway
   servers: 
   - hosts:
-    - tjhiatt.dev
-    - timhiatt.dev
-    - *.tjhiatt.dev
-    - *.timhiatt.dev
+    - "tjhiatt.dev"
+    - "*.tjhiatt.dev"
+    - "timhiatt.dev"
+    - "*.timhiatt.dev"
     port: 
       number: 80
       name: http
