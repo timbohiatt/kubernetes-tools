@@ -1,10 +1,10 @@
 ---
-apiVersion: getambassador.io/v2
-kind: Mapping
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
 metadata:
-  name: argocd-server-ui
+  name:  argocd-server-ui
   namespace: argocd
 spec:
-  host: argocd.tjhiatt.dev
+  hostname: argocd.tjhiatt.dev
   prefix: /
-  service: argocd-server:443
+  service: argocd-server.argocd:80
