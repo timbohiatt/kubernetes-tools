@@ -18,8 +18,8 @@ spec:
         prefix: "/tim"
     rewrite:
       uri: "/"
-    - route:
-      - destination:
-          host: kiali.istio-system.svc.cluster.local
-          port:
-            number: 20001
+    route:
+    - destination:
+        host: kiali.istio-system.svc.cluster.local
+        port:
+          number: 20001
