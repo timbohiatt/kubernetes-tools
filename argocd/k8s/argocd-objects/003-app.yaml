@@ -24,7 +24,7 @@ spec:
         namespace: hello-world
       syncPolicy:
         automated:
-          selfHeal: "true"
-          prune: "true"
+          selfHeal: true
+          prune: true
 
           
