@@ -9,7 +9,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          workload: true
+          workload: "true"
   template:
     metadata:
       name: '{{cluster}}-{{region}}-hello-world'
@@ -24,7 +24,7 @@ spec:
         namespace: hello-world
       syncPolicy:
         automated:
-          selfHeal: true
-          prune: true
+          selfHeal: "true"
+          prune: "true"
 
           
