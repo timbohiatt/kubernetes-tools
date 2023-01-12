@@ -1,10 +1,14 @@
+---
+apiVersion: v1
 kind: Secret
+metadata:
+  name: cluster-secret
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    workload: "true"
 data:
   config: "{'tlsClientConfig':{'insecure':false}}"
   cluster: "primary"
   region: "europe-west2"
   server: "https://172.16.0.18"
-metadata:
-  labels:
-    argocd.argoproj.io/secret-type: cluster
-    workload: "true"
