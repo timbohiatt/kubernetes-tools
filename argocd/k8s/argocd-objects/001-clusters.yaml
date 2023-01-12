@@ -6,6 +6,7 @@ metadata:
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: cluster
+    region: "europe-west2"
     workload: "true"
 data:
   config: eyd0bHNDbGllbnRDb25maWcnOnsnaW5zZWN1cmUnOmZhbHNlfX0= #"{'tlsClientConfig':{'insecure':false}}"
