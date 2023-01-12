@@ -8,7 +8,7 @@ metadata:
     argocd.argoproj.io/secret-type: cluster
     workload: "true"
 data:
-  config: "{'tlsClientConfig':{'insecure':false}}"
-  cluster: "primary"
-  region: "europe-west2"
-  server: "https://172.16.0.18"
+  config: eyd0bHNDbGllbnRDb25maWcnOnsnaW5zZWN1cmUnOmZhbHNlfX0= #"{'tlsClientConfig':{'insecure':false}}"
+  cluster: cHJpbWFyeQ== #"primary"
+  region: ZXVyb3BlLXdlc3Qy #"europe-west2"
+  server: aHR0cHM6Ly8xNzIuMTYuMC4xOA== #"https://172.16.0.18"
