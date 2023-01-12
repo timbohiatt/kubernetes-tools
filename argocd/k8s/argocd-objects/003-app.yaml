@@ -12,7 +12,7 @@ spec:
           workload: "true"
   template:
     metadata:
-      name: '{{cluster}}-{{region}}-hello-world'
+      name: '{{name}}-{{region}}-hello-world'
     spec:
       project: sample-apps
       source:
