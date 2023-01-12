@@ -11,5 +11,5 @@ data:
   config: eyd0bHNDbGllbnRDb25maWcnOnsnaW5zZWN1cmUnOmZhbHNlfX0= #"{'tlsClientConfig':{'insecure':false}}"
   name: cHJpbWFyeQ== #"primary"
   server: aHR0cHM6Ly8xNzIuMTYuMC4xOA== #"https://172.16.0.18"
-  region: ZXVyb3BlLXdlc3Qy #"europe-west2"
+  #region: ZXVyb3BlLXdlc3Qy #"europe-west2"
   
