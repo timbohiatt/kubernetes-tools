@@ -1,0 +1,10 @@
+kind: Secret
+data:
+  config: "{'tlsClientConfig':{'insecure':false}}"
+  cluster: "primary"
+  region: "europe-west2"
+  server: "https://172.16.0.18"
+metadata:
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+    workload: "true"

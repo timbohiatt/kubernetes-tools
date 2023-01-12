@@ -6,23 +6,25 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - list:
-      elements:
-      - cluster: primary
-        url: https://172.16.0.18
+  - clusters:
+      selector:
+        matchLabels:
+          workload: true
   template:
     metadata:
-      name: '{{cluster}}-hello-world'
+      name: '{{cluster}}-{{region}}-hello-world'
     spec:
-      project:  hello-world
+      project: sample-apps
       source:
         repoURL: https://github.com/timbohiatt/kubernetes-tools.git
         targetRevision: HEAD
         path: sample-apps/argocd-apps/hello-world/manifests
       destination:
-        server: '{{url}}'
+        server: '{{server}}'
         namespace: hello-world
       syncPolicy:
         automated:
           selfHeal: true
-          prune: truesposp
+          prune: true
+
+          
