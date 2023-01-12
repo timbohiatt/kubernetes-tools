@@ -11,11 +11,11 @@ spec:
   description: Sample Apps Project
   # Allow manifests to deploy from any Git repos
   sourceRepos:
-  - '*'
+    - '*'
   # Permit applications to deploy to any namespace in any cluster
   destinations:
-  - namespace: '*'
-    server: '*'
+    - namespace: '*'
+      server: '*'
   # Deny all cluster-scoped resources from being created, except for Namespace
   #clusterResourceWhitelist:
   #- group: '*'
