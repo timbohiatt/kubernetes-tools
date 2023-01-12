@@ -14,8 +14,8 @@ spec:
     - '*'
   # Permit applications to deploy to any namespace in any cluster
   destinations:
-    - namespace: ''
-      server: ''
+  - namespace: '*'
+    server: '*'
   # Deny all cluster-scoped resources from being created, except for Namespace
   #clusterResourceWhitelist:
   #- group: '*'
