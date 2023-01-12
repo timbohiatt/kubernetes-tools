@@ -4,6 +4,8 @@ kind: ApplicationSet
 metadata:
   name: hello-world
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   generators:
   - clusters:
@@ -16,15 +18,17 @@ spec:
     spec:
       project: sample-apps
       source:
-        repoURL: https://github.com/timbohiatt/kubernetes-tools.git
-        targetRevision: HEAD
         path: sample-apps/argocd-apps/hello-world/manifests
+        repoURL: 'https://github.com/timbohiatt/kubernetes-tools'
+        targetRevision: HEAD
       destination:
         server: '{{server}}'
         namespace: hello-world
       syncPolicy:
         automated:
-          selfHeal: true
           prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
 
           
