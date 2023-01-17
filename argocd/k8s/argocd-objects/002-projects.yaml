@@ -12,6 +12,8 @@ spec:
   # Allow manifests to deploy from any Git repos
   sourceRepos:
   - '*'
+  sourceNamespaces:
+  - '*'
   # Permit applications to deploy to any namespace in any cluster
   destinations:
   - namespace: '*'
